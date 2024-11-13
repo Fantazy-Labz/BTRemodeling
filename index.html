@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BT-Remodeling</title>
+    <link rel="stylesheet" href="style.css">
+   
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+
+  <!-- *******  Owl Carousel Links  ******* -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+  
+</head>
+
+<body>
+
+    <style>
+        @media  (width:100vh){
+  #menu-icon2{
+      
+      overflow: hidden;
+  }
+}
+    </style>
+
+    <header class="header" style="background-color: white;">
+        <img src ="Captura_de_pantalla_2024-01-13_005651-removebg-preview.png" style="width: auto; height: 75px; ">
+
+        <button class="fa-solid fa-phone" id="menu-icon2" style="border: none; padding: 10px; background-color: #A56F34; color: #fff;" onclick="showPhoneNumberModal()"></button>
+        <div id="modal" style="width:250pxpx;display: none; position: center; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; border-radius: 8px; top: 30px; left: 0; margin-top:30%%; z-index:4000; ">
+           <ul>
+            <li>
+            <a href="tel:+15863295217">
+            <span>+1 (586)3295217</span>
+        </a>
+    </ul>
+</li>
+          </div>
+        
+
+        <i class='bx bx-menu' id="menu-icon"></i >
+        
+        <nav class="navbar" style="background-color:white;">
+            <a href="#historia">About</a>
+            <a href="#servicios">Portfolio</a>
+            <a href="#Portfolio">Services</a>
+            <a href="#Reviews">Reviews</a>
+            <a href="#" onclick="event.preventDefault(); openForm();">Contact us</a >
+        </nav>
+        
+    </header>
+    <div class="nav-bg"></div>
+
+    <script src="script.js"></script>
+
+    <div class="slider">
+        <!-- list Items -->
+        <div class="list">
+            <div class="item active">
+                <img src="image/img1.jpg">
+                <div class="content">
+              
+                    <h2>CUSTOM DESIGNS</h2>
+                    <p>
+                        Your premier contractor for all your custom ideas
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img2.jpg">
+                <div class="content">
+                   
+                    <h2>Indoors and outdoors</h2>
+                   
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img3.jpg">
+                <div class="content">
+                 
+                    <h2>General Contractor</h2>
+                    <p>
+                        As a general contractor, the company oversees all aspects of a home renovation project, coordinating with subcontractors and ensuring the project is completed to the client's satisfaction.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img4.jpg">
+                <div class="content">
+                 
+                    <h2>Framing metal</h2>
+                    <p>
+                        This involves constructing the skeletal framework for commercial buildings using metal studs.
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img5.jpg">
+                <div class="content">
+                  
+                    <h2>Kitchen and bath</h2>
+                    <p>
+                        Specializing in the renovation and remodeling of kitchens and bathrooms, this service covers everything from layout design to the installation of cabinets, countertops, and fixtures.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- button arrows  -->
+        <div class="arrows" style="width=5px; height=5px; ">
+            <button id="prev" ><</button>
+            <button id="next" >></button>
+        </div>
+        <!-- thumbnail -->
+        <div class="thumbnail">
+            <div class="item active">
+                <div class="content">
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                </div>
+            </div>
+            <div class="item">
+                <div class="content">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="app.js"></script>
+    <script>
+        const button = document.getElementById('menu-icon2');
+        const modal = document.getElementById('modal');
+      
+        button.addEventListener('click', function () {
+          modal.style.display = 'block';
+          button.style.display = 'none'; // Hide the button when modal is displayed
+        });
+      
+        document.addEventListener('click', function (event) {
+          if (!button.contains(event.target) && !modal.contains(event.target)) {
+            modal.style.display = 'none';
+            button.style.display = 'block'; // Show the button when modal is closed
+          }
+        });
+     
+      </script>
+      
+
+
+    <style>
+        .historia{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+        
+        .historia{
+            font-family:'Poppins';
+            width: 100%;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+        
+        .row{
+            width: 80%;
+            max-width: 1170px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 50px;
+            overflow-x: hidden;
+            padding: 5rem 0;
+        }
+        
+        .row .imgWrapper{
+            overflow: hidden;
+        }
+        
+        .row .imgWrapper img{
+        
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.3%;
+        }
+        
+        .row .imgWrapper:hover img{
+            transform: scale(1.25);
+        }
+        
+        .row .contentWrapper{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 30px;
+        
+        }
+        
+        .row .contentWrapper span.textWrapper{
+            display: block;
+            font-size: 20px;
+            text-transform: capitalize;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .row .contentWrapper span.textWrapper span{
+            display: inline-block;
+            background: #A56F34;
+            width: 70px;
+            height: 5px;
+        
+        }
+         
+        .row .contentWrapper h2{
+            font-size: 40px;
+            font-weight: 700;
+            color: #000000;
+            padding-bottom: 20px;
+        }
+         
+        .row .contentWrapper p{
+            font-size: 16px;
+            line-height: 25px;
+            padding-bottom: 25px;
+        }
+        
+        .row .contentWrapper a{
+            display:  inline-block;
+            text-decoration: none;
+            text-transform: uppercase;
+            background: #000000;
+            color: #fff;
+            padding: 15px 40px;
+            letter-spacing: 1px;
+            user-select: none;
+        
+        }
+        
+        @media (max-width: 991px){
+        .row{
+            grid-template-columns: 1fr;
+            grid-gap: 50px;
+        }
+        .row .contentWrapper{
+        
+            padding-left: 0;
+        
+        }
+        }
+        
+        @media (max-width: 768px){
+        .row{
+            width: 90%;
+        }
+        
+        .row .contentWrapper h2{
+            font-size: 30px;
+            padding-bottom: 20px;
+        }
+        .row .contentWrapper p{
+            
+            line-height: 24px;
+        }
+        }
+        
+        @media (max-width: 567px){
+        
+            .row .contentWrapper span.textWrapper{
+                font-size: 18px;
+            }
+            .row .contentWrapper h2{
+            font-size: 25px;
+            
+        }
+        .row .contentWrapper p{
+            font-size: 15px;
+            line-height: 22px;
+        }
+        .row .contentWrapper a{
+            font-size: 15px;
+            padding: 10px 20px;
+        }
+        }
+        
+        
+            </style>
+        <div class="historia" id="historia">
+            <div class= "row">
+                <div class="imgWrapper">
+        
+                    <img src="pexels-pixabay-279648.jpg">
+                </div>
+                <div class="contentWrapper">
+                    <div class="content">
+                        <span class="textWrapper">
+                        <span></span>
+                    </span>
+                        <h2 style="color: #A56F34;">OUR HISTORY</h2>
+                     <p style="color: #000000;"> Our History Since 2016, BT Remodeling has been transforming spaces and creating value in Texas and beyond. As a dedicated team of professionals in both commercial and residential sectors, we bring a wealth of experience and a commitment to excellence in every project we undertake. Commercial Expertise: From intricate metal framing and drywall installations to the precise work of installing doors and acoustical ceilings, our commercial services cater to a variety of business needs, ensuring functionality and aesthetic appeal. Residential Mastery: In the realm of residential remodeling.</p>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="servicios" id="servicios">
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+    
+            .container-img {
+                width: 100%;
+                max-width: 1100px;
+                margin: auto;
+                margin-top: 60px;
+                margin-bottom: 60px;
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 250px;
+                grid-gap: 20px;
+            }
+    
+            .container-img .box-img {
+                position: relative;
+                overflow: hidden;
+            }
+    
+            .container-img .box-img figure {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+            }
+    
+            .container-img .box-img img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: filter 0.3s ease;
+            }
+    
+            .container-img .box-img:hover img {
+                filter: brightness(70%);
+            }
+    
+            .overlay2 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: #fff;
+                font-size: 1.5em;
+                background: rgba(0, 0, 0, 0.7);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+    
+            .container-img .box-img:hover .overlay2 {
+                opacity: 1;
+            }
+    
+            @media screen and (max-width: 800px) {
+                .container-img {
+                    width: 95%;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-gap: 10px;
+                    grid-template-rows: 200px;
+                }
+    
+                .container-img .box-img:nth-child(1) {
+                    grid-column-start: span 1;
+                }
+            }
+    
+            @media screen and (max-width: 500px) {
+                .container-img {
+                    width: 90%;
+                    grid-template-columns: repeat(1, 1fr);
+                }
+    
+                .container-img .box-img img {
+                    height: 200px;
+                }
+            }
+        </style>
+
+        <h2 style="color: #A56F34; text-align:center;">Services</h2>
+    
+        <div class="container-img">
+            <div class="box-img">
+                
+                    <figure>
+                        <img src="img/f1.png" alt="img-galeria">
+                        <div class="overlay2">
+                            General Contractor
+                    </figure>
+                </a>
+            </div>
+            <div class="box-img">
+               
+                    <figure>
+                        <img src="img/f3.png" alt="img-galeria">
+                        <div class="overlay2">
+                            Remodeling
+                    </figure>
+                </a>
+            </div>
+            <div class="box-img">
+              
+                    <figure>
+                        <img src="img/f4.png" alt="img-galeria">
+                        <div class="overlay2">
+                            Painting
+                    </figure>
+                </a>
+            </div>
+            <div class="box-img">
+               
+                    <figure>
+                        <img src="img/f2.png" alt="img-galeria">
+                        <div class="overlay2">
+                            Flooring
+                    </figure>
+                </a>
+            </div>
+            <div class="box-img">
+               
+                    <figure>
+                        <img src="img/f5.png" alt="img-galeria">
+                        <div class="overlay2">
+                            Door and hardware
+                    </figure>
+                </a>
+            </div>
+            <div class="box-img">
+                
+                    <figure>
+                        <img src="img/f6.png" alt="img-galeria">
+                        <div class="overlay2">
+                            
+    Carpentry
+                    </figure>
+                </a>
+            </div>
+            <div class="box-img">
+              
+                    <figure>
+                        <img src="img/f7.png" alt="img-galeria">
+                        <div class="overlay2">
+                            
+    Drywall
+    
+                    </figure>
+                </a>
+            </div>
+        </div>
+</div>
+
+
+<div class="proyectos" id="Portfolio">
+    <h2 style="color: #A56F34; text-align:center;">Portfolio</h2>
+    <div id="card-area">
+        <div class="wrapper">
+            <div class="box-area"> 
+                <div class="box">
+                    <img src="img/p1.png" alt="">
+                    <div class="overlay">
+                        <h3>Carpentry</h3>
+                        <p>This custom carpentry project features a geometric shelving unit, crafted from natural wood, set against a contrasting dark wall. The design is both functional and artistic, serving as a unique display and storage solution. </p>
+                        <a href="#">Book Now</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/p2.png" alt="">
+                    <div class="overlay">
+                        <h3>Dooring</h3>
+                        <p>This project showcases a premium wooden door installation, enhancing the home's entrance with its rich finish and contemporary hardware.</p>
+                        <a href="#">Book Now</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/p3.png" alt="">
+                    <div class="overlay">
+                        <h3>Metal framing</h3>
+                        <p>This image showcases the initial stage of a commercial interior construction project in Texas, featuring metal stud framing. This method provides a sturdy, fire-resistant structure that's essential for safety and code compliance. </p>
+                        <a href="#">Book Now</a>
+                    </div>
+                </div>
+            </div> 
+            <div class="box-area"> 
+                <div class="box">
+                    <img src="img/p4.png" alt="">
+                    <div class="overlay">
+                        <h3>Acoustic Ceilings</h3>
+                        <p>This image displays the completed interior of a dining establishment, featuring an acoustic ceiling system. The ceiling tiles are designed to reduce noise levels, creating a comfortable ambiance for diners.</p>
+                        <a href="#">Book Now</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/p5.png" alt="">
+                    <div class="overlay">
+                        <h3>Comercial painting</h3>
+                        <p>This photo captures an interior commercial space in the midst of a professional painting process. The scene indicates a meticulous preparation stage with the floors covered in protective plastic sheeting, ensuring a clean work environment. </p>
+                        <a href="#">Book Now</a>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="img/p6.png" alt="">
+                    <div class="overlay">
+                        <h3>Bathroom</h3>
+                        <p>This bathroom remodel features a walk-in shower with frameless glass, highlighting the modern tile work in varied shades and textures. The design optimizes space while providing a spa-like experience.</p>
+                        <a href="#">Book Now</a>
+                    </div>
+                </div>
+            </div>                
+        </div>       
+    </div>
+    </div>
+
+    <div class="testimonios" id="Reviews">
+    <section class="testimonial-area">
+        <div class="container">
+            <h2 style="color: #A56F34; text-align:center;">Our testimonial</h2>
+            <div class="sec-title" style="text-align: center;">
+                
+                <p>what client say about us?</p>
+            </div>
+            <div class="testimonial-content owl-carousel" style="margin-left: 1%;">
+                <div class="single-testimonial">
+                    <h6 style="font-size:larger; color: #000000; z-index: 5000;margin-right: 20%; text-align: right;" >John Smith</h6>
+                    <p>Our kitchen and bathroom makeover by BT Remodeling was incredible! Brandon's personal involvement ensured everything went smoothly. Truly professional and highly recommended."</p>
+                        <div class="client-info">
+                            <div class="client-pic">
+                           
+                                    <img src="img/1.png">
+                          .
+                            </div>
+                          
+                        </div>
+                </div>
+                <div class="single-testimonial">
+                    <h6 style="font-size: larger; color: #000000; z-index: 2000;margin-right: 20%; text-align: right;">Emily Parker</h6>
+                    <p>"Brandon and his team at BT Remodeling transformed our office brilliantly. Their efficiency and Brandon's hands-on project management made all the difference. Fantastic results!"</p>
+                        <div class="client-info">
+                            <div class="client-pic">
+                                
+                                    <img src="img/2.png">
+                             .
+                            </div>
+                            
+                        </div>
+                </div>
+                <div class="single-testimonial">
+                    
+                        <h6  style="font-size: larger; color: #000000; z-index: 2000;margin-right: 15%; text-align: right;">Michael Taylor</h6>
+                    <p>"Renovating my first home with BT Remodeling was a breeze, thanks to Brandon's guidance. His team's craftsmanship is top-notch. Absolutely love my new space!"</p>
+                        <div class="client-info">
+                            <div class="client-pic">
+                                
+                                    <img src="img/3.png">
+                                .
+                            </div>
+                            
+                               
+                            </div>
+                        </div>
+                </div>
+         
+               
+                </div>
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('.testimonial-content').owlCarousel({
+    loop:true,
+    nav:false,
+    dots:true,
+    margin:50,
+    autoplay:true,
+    autoplayTime:4000,
+    smartSpeed:800,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:1
+        },
+        1000:{
+            items:2
+        }
+    }
+})
+            })
+        </script>
+    </section>
+</div>
+
+
+<footer class="footer" style="background-color: #080808;">
+    <div class="section__container footer__container">
+        <!-- Columna 1: Información -->
+        <div class="footer__col" style="margin: 10%;">
+            <h5><a href="#">BtRemodeling</a></h5>
+            <p>
+                BT Remodeling has been transforming spaces and creating value in Texas and beyond. As a dedicated team of professionals in both commercial and residential sectors, we bring a wealth of experience and a commitment to excellence in every project we undertake.
+            </p>
+        </div>
+
+        <!-- Columna 2: Quick Links -->
+        <div class="footer__col" style="margin-top: 10%;">
+            <h4>Quick links</h4>
+            <div class="footer__links">
+                <a href="#historia">About</a>
+                <a href="#servicios">Portfolio</a>
+                <a href="#Portfolio">Services</a>
+                <a href="#Reviews">Reviews</a>
+            </div>
+        </div>
+
+        <!-- Columna 3: Specialties -->
+        <div class="footer__col" style="margin-left:10%">
+            <h4>Our Specialties</h4>
+            <div class="footer__links">
+                <a>General contractor</a>
+                <a>Remodeling</a>
+                <a>Painting</a>
+                <a>Flooring</a>
+                <a>Door and hardware</a>
+                <a>Carpentry</a>
+                <a>Drywall</a>
+            </div>
+        </div>
+
+        <!-- Columna 4: Help y botón adicional con verificación de contraseña -->
+        <div class="footer__col">
+            <h4>Help</h4>
+            <div class="footer__links">
+                <a href="#" onclick="event.preventDefault(); openForm();">Contact us</a>
+            </div>
+
+            <!-- Botón adicional con protección por contraseña -->
+            <div style="margin-top: 20px;">
+                <button onclick="checkPassword()" class="footer-button" style="
+                    display: inline-block;
+                    background-color: #f8fafb;
+                    color: #333;
+                    padding: 10px 20px;
+                    text-decoration: none;
+                    border-radius: 5px;
+                    font-weight: bold;
+                    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+                    transition: all 0.3s ease;">
+                    Send a Review
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer__bar">
+        Copyright © 2023 Powered by <a href="https://fantazylabz.tech" style="color: #a3a3a3; text-decoration: underline;">Fantazy Labz.</a>
+    </div>
+
+    <!-- Código existente para el formulario emergente -->
+    <div class="form-popup" id="form-popup" style="display: none; text-align: center; z-index: 3000;">
+        <div class="form-popup-content" style="text-align: center;color: #000000;">
+            <h2>Contact us</h2>
+            <form id="contact-form" action="https://formsubmit.co/brandon@bt-remodeling.com" method="POST" style="text-align: center;">
+                <div class="input-group" style="text-align: center;">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Name" style="color: #000000;">
+                    <label for="phone">Phone</label>
+                    <input type="tel" name="phone" id="phone" placeholder="Phone" style="color: #000000;">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="E-mail" style="color: #000000;">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Message" style="color: #000000;"></textarea>
+                    <div class="form-txt">
+                        <a href="#">Politica de privacidad</a>
+                        <a href="#">Terminos y condiciones</a>
+                    </div>
+                    <input class="btn" type="submit" value="Send">
+                    <input type="hidden" name="_next" value="https://bt-remodeling.com/">
+                    <input type="hidden" name="_captcha" value="false">
+                </div>
+            </form>
+            <button class="close-form" id="close-form" style="background-color: #f8fafb;">&times;</button>
+
+            <script>
+                function openForm() {
+                    document.getElementById('form-popup').style.display = 'block';
+                }
+
+                document.getElementById("close-form").addEventListener("click", function() {
+                    document.getElementById("form-popup").style.display = "none";
+                });
+
+                // Verificación de contraseña antes de redirigir
+                function checkPassword() {
+                    const password = prompt("Please enter the password:");
+                    const correctPassword = "remodeling123"; // Define la contraseña correcta aquí
+
+                    if (password === correctPassword) {
+                        window.location.href = "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAAMAALnVzA5UMDhZUlRLN0FDOVFQWFRPQU9SMFRTTjI2Sy4u&embed=true"; // Redirigir si la contraseña es correcta
+                    } else {
+                        alert("Incorrect password. Access denied.");
+                    }
+                }
+            </script>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+
+</html>
