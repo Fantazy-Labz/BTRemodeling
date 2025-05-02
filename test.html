@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Recent Projects</title>
+</head>
+<body>
+    <div class="recent-projects" id="recent-projects">
+        <h2 style="color: #A56F34; text-align:center;">Our most recent projects</h2>
+        <div class="projects-container">
+            <div class="project-card" data-project="lombard">
+                <img src="img/projects/1/20-web-or-mls-Photo Feb 25 2025, 10 15 26 PM.jpg" alt="Modern living room" onerror="this.src='/api/placeholder/400/320'; this.onerror=null;">
+                <div class="project-name">Lombard In Duncanville</div>
+            </div>
+            <div class="project-card" data-project="meadow">
+                <img src="img/projects/3/001-529MeadowHeathLane-Dallas-TX-75232-FULL.jpg" alt="Modern kitchen" onerror="this.src='/api/placeholder/400/320'; this.onerror=null;">
+                <div class="project-name">Meadow Heath Lane Tx</div>
+            </div>
+            <div class="project-card" data-project="bayonne">
+                <img src="img/projects/2/103-bayonne-dr-mansfield-tx-76063-High-Res-1.jpg" alt="Sliding door" onerror="this.src='/api/placeholder/400/320'; this.onerror=null;">
+                <div class="project-name">Bayonne In Mansfield Tx</div>
+            </div>
+            <div class="project-card" data-project="hedgerow">
+                <img src="img/projects/4/2-web-or-mls-Photo Jan 23 2025, 3 57 27 AM (1).jpg" alt="Modern bedroom" onerror="this.src='/api/placeholder/400/320'; this.onerror=null;">
+                <div class="project-name">Hedgerow Tx</div>
+            </div>
+            <div class="project-card" data-project="crossbend">
+                <img src="img/projects/5/1-web-or-mls-Photo Feb 05 2025, 2 11 19 AM_1.jpg" alt="Kitchen detail" onerror="this.src='/api/placeholder/400/320'; this.onerror=null;">
+                <div class="project-name">Crossbend Tx</div>
+            </div>
+            <div class="project-card" data-project="silvercreek">
+                <img src="img/projects/6/29-4Q4A6484.jpg" alt="Second living room" onerror="this.src='/api/placeholder/400/320'; this.onerror=null;">
+                <div class="project-name">Silver Creek In Duncanville Tx</div>
+            </div>
+        </div>
+
+        <div class="project-modal" id="projectModal">
+            <div class="modal-content">
+                <span class="close-btn">&times;</span>
+                <div class="project-detail">
+                    <img class="main-image" src="" alt="Project detail" onerror="this.src='/api/placeholder/800/600'; this.onerror=null;">
+                    <div class="project-info">
+                        <h2></h2>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+                <div class="gallery-controls">
+                    <div class="gallery-nav prev">&#10094;</div>
+                    <div class="gallery-nav next">&#10095;</div>
+                </div>
+                <div class="thumbnail-gallery"></div>
+            </div>
+        </div>
+
+        <style>
+            .recent-projects {
+            padding: 40px 0;
+            background-color: #fff;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 0 15px;
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            height: 280px;
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card:hover {
+            transform: scale(1.02);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-name {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: white;
+            padding: 10px;
+            text-align: center;
+            color: #A56F34;
+            font-weight: bold;
+        }
+
+        /* Modal styles */
+        .project-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 2000;
+            overflow: auto;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: #A56F34;
+            z-index: 2010;
+        }
+
+        .project-detail {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .project-detail {
+                flex-direction: row;
+            }
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: cover;
+        }
+
+        @media (min-width: 768px) {
+            .main-image {
+                width: 65%;
+            }
+        }
+
+        .project-info {
+            padding: 0 15px;
+            margin-top: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .project-info {
+                width: 35%;
+                margin-top: 0;
+            }
+        }
+
+        .project-info h2 {
+            color: #A56F34;
+            margin-bottom: 20px;
+            font-size: 28px;
+        }
+
+        .project-info p {
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .thumbnail-gallery {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            margin-top: 20px;
+            padding-bottom: 10px;
+        }
+
+        .thumbnail {
+            width: 100px;
+            min-width: 100px;
+            height: 70px;
+            object-fit: cover;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .thumbnail:hover {
+            opacity: 0.8;
+        }
+
+        .gallery-nav {
+            position: absolute;
+            top: 50%;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 2005;
+            transform: translateY(-50%);
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .projects-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        </style>
+
+        <script>
+             const projectsData = {
+            "living-room": {
+                name: "Lombard In Duncanville",
+                description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                mainImage: "img/projects/1/20-web-or-mls-Photo Feb 25 2025, 10 15 26 PM.jpg",
+                gallery: [
+                    "img/projects/1/19-web-or-mls-Photo Feb 25 2025, 10 13 26 PM.jpg",
+                    "img/projects/1/20-web-or-mls-Photo Feb 25 2025, 10 15 26 PM.jpg",
+                    "img/projects/1/21-web-or-mls-Photo Feb 25 2025, 10 16 50 PM.jpg",
+                    "img/projects/1/4-web-or-mls-Photo Feb 25 2025, 9 53 25 PM.jpg",
+                    "img/projects/1/5-web-or-mls-Photo Feb 25 2025, 9 54 05 PM.jpg",
+                    "img/projects/1/6-web-or-mls-Photo Feb 25 2025, 9 54 52 PM.jpg",
+                    "img/projects/1/7-web-or-mls-Photo Feb 25 2025, 9 55 09 PM.jpg",
+                    "img/projects/1/8-web-or-mls-Photo Feb 25 2025, 9 56 28 PM.jpg",
+                ]
+            },
+            "kitchen": {
+                name: "Bayonne In Mansfield",
+                description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                mainImage: "img/projects/3/001-529MeadowHeathLane-Dallas-TX-75232-FULL.jpg",
+                gallery: [
+                    "img/projects/3/001-529MeadowHeathLane-Dallas-TX-75232-FULL.jpg",
+                    "img/projects/3/002-529MeadowHeathLane-Dallas-TX-75232-FULL.jpg",
+                    "img/projects/3/003-529MeadowHeathLane-Dallas-TX-75232-FULL.jpg",
+                    "img/projects/3/004-529MeadowHeathLane-Dallas-TX-75232-FULL.jpg",
+                    "img/projects/3/005-529MeadowHeathLane-Dallas-TX-75232-FULL.jpg",
+                    "img/projects/3/006-529MeadowHeathLane-Dallas-TX-75232-FULL.jpg",
+                    "img/projects/3/007-529MeadowHeathLane-Dallas-TX-75232-FULL.jpg",
+                    "img/projects/3/008-529MeadowHeathLane-Dallas-TX-75232-FULL.jpg",
+                ]
+            },
+            // Add data for other projects similarly
+            "sliding-door": {
+                name: "Meadow Heath Lane",
+                description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                mainImage: "img/projects/2/103-bayonne-dr-mansfield-tx-76063-High-Res-1.jpg",
+                gallery: [
+                    "img/projects/2/103-bayonne-dr-mansfield-tx-76063-High-Res-1.jpg",
+                    "img/projects/2/103-bayonne-dr-mansfield-tx-76063-High-Res-2.jpg",
+                    "img/projects/2/103-bayonne-dr-mansfield-tx-76063-High-Res-3.jpg",
+                    "img/projects/2/103-bayonne-dr-mansfield-tx-76063-High-Res-4.jpg",
+                    "img/projects/2/103-bayonne-dr-mansfield-tx-76063-High-Res-5.jpg",
+                    "img/projects/2/103-bayonne-dr-mansfield-tx-76063-High-Res-6.jpg",
+                    "img/projects/2/103-bayonne-dr-mansfield-tx-76063-High-Res-7.jpg",
+                    "img/projects/2/103-bayonne-dr-mansfield-tx-76063-High-Res-8.jpg",
+                ]
+            },
+            "bedroom": {
+                name: "Hedgerow",
+                description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                mainImage:  "img/projects/4/2-web-or-mls-Photo Jan 23 2025, 3 57 27 AM (1).jpg",
+                gallery: [
+                    "img/projects/4/2-web-or-mls-Photo Jan 23 2025, 3 57 27 AM (1).jpg",
+                    "img/projects/4/3-web-or-mls-Photo Jan 23 2025, 3 57 57 AM.jpg",
+                    "img/projects/4/4-web-or-mls-Photo Jan 23 2025, 3 59 24 AM.jpg",
+                    "img/projects/4/5-web-or-mls-Photo Jan 23 2025, 4 00 01 AM (2).jpg",
+                    "img/projects/4/6-web-or-mls-Photo Jan 23 2025, 4 02 40 AM.jpg",
+                    "img/projects/4/7-web-or-mls-Photo Jan 23 2025, 4 03 38 AM.jpg",
+                    "img/projects/4/8-web-or-mls-Photo Jan 23 2025, 4 04 37 AM.jpg",
+                    "img/projects/4/9-web-or-mls-Photo Jan 23 2025, 4 05 32 AM.jpg",
+                ]
+            },
+            "kitchen-detail": {
+                name: "Crossbend",
+                description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                mainImage: "img/projects/5/1-web-or-mls-Photo Feb 05 2025, 2 11 19 AM_1.jpg",
+                gallery: [
+                    "img/projects/5/1-web-or-mls-Photo Feb 05 2025, 2 11 19 AM_1.jpg",
+                    "img/projects/5/2-web-or-mls-Photo Feb 05 2025, 2 13 25 AM (1) (1)_1.jpg",
+                    "img/projects/5/3-web-or-mls-Photo Feb 05 2025, 2 15 01 AM_1.jpg",
+                    "img/projects/5/4-web-or-mls-Photo Feb 05 2025, 2 16 48 AM (1)_1.jpg",
+                    "img/projects/5/5-web-or-mls-Photo Feb 05 2025, 2 21 05 AM_1.jpg",
+                    "img/projects/5/6-web-or-mls-Photo Feb 05 2025, 2 22 04 AM_1.jpg",
+                    "img/projects/5/7-web-or-mls-Photo Feb 05 2025, 2 23 21 AM_1.jpg",
+                    "img/projects/5/8-web-or-mls-Photo Feb 05 2025, 2 25 56 AM_1.jpg",
+                ]
+            },
+            "living-room-2": {
+                name: "Pool House",
+                description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                mainImage: "img/projects/6/29-4Q4A6484.jpg",
+                gallery: [
+                    "img/projects/6/23-4Q4A6466.jpg",
+                    "img/projects/6/24-4Q4A6469.jpg",
+                    "img/projects/6/25-4Q4A6472.jpg",
+                    "img/projects/6/26-4Q4A6475.jpg",
+                    "img/projects/6/28-4Q4A6481.jpg",
+                    "img/projects/6/29-4Q4A6484.jpg",
+                    "img/projects/6/27-4Q4A6478.jpg",
+                    "img/projects/6/30-4Q4A6487.jpg",
+                ]
+            }
+        };
+
+        // Agregar este código después de que la página haya cargado
+        document.addEventListener("DOMContentLoaded", function() {
+            // Get DOM elements
+            const modal = document.getElementById('projectModal');
+            const closeBtn = document.querySelector('.close-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+            const mainImage = document.querySelector('.main-image');
+            const projectTitle = document.querySelector('.project-info h2');
+            const projectDescription = document.querySelector('.project-info p');
+            const thumbnailGallery = document.querySelector('.thumbnail-gallery');
+            const prevBtn = document.querySelector('.prev');
+            const nextBtn = document.querySelector('.next');
+
+            // Current project and image index
+            let currentProject = null;
+            let currentImageIndex = 0;
+
+            // Open modal when a project card is clicked
+            projectCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const projectId = card.getAttribute('data-project');
+                    openProjectModal(projectId);
+                });
+            });
+
+            // Close modal when close button is clicked
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            // Close modal when clicking outside the modal content
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+
+            // Navigate to previous image
+            prevBtn.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex - 1 + projectsData[currentProject].gallery.length) % projectsData[currentProject].gallery.length;
+                updateMainImage();
+            });
+
+            // Navigate to next image
+            nextBtn.addEventListener('click', () => {
+                currentImageIndex = (currentImageIndex + 1) % projectsData[currentProject].gallery.length;
+                updateMainImage();
+            });
+
+            // Function to open project modal
+            function openProjectModal(projectId) {
+                if (projectsData[projectId]) {
+                    currentProject = projectId;
+                    currentImageIndex = 0;
+                    
+                    // Set project details
+                    projectTitle.textContent = projectsData[projectId].name.toUpperCase();
+                    projectDescription.textContent = projectsData[projectId].description;
+                    
+                    // Set main image with fallback
+                    mainImage.src = projectsData[projectId].mainImage;
+                    mainImage.alt = projectsData[projectId].name;
+                    mainImage.onerror = function() {
+                        this.src = '/api/placeholder/800/600';
+                        this.onerror = null;
+                    };
+                    
+                    // Create thumbnails
+                    updateThumbnails();
+                    
+                    // Show modal
+                    modal.style.display = 'block';
+                }
+            }
+
+            // Function to update thumbnails
+            function updateThumbnails() {
+                thumbnailGallery.innerHTML = '';
+                
+                projectsData[currentProject].gallery.forEach((img, index) => {
+                    const thumbnail = document.createElement('img');
+                    thumbnail.src = img;
+                    thumbnail.alt = `Thumbnail ${index + 1}`;
+                    thumbnail.classList.add('thumbnail');
+                    
+                    // Add fallback for image loading errors
+                    thumbnail.onerror = function() {
+                        this.src = '/api/placeholder/100/70';
+                        this.onerror = null;
+                    };
+                    
+                    // Add active class to current thumbnail
+                    if (index === currentImageIndex) {
+                        thumbnail.style.border = '2px solid #A56F34';
+                    }
+                    
+                    // Add click event to thumbnail
+                    thumbnail.addEventListener('click', () => {
+                        currentImageIndex = index;
+                        updateMainImage();
+                    });
+                    
+                    thumbnailGallery.appendChild(thumbnail);
+                });
+            }
+
+            // Function to update main image
+            function updateMainImage() {
+                mainImage.src = projectsData[currentProject].gallery[currentImageIndex];
+                mainImage.onerror = function() {
+                    this.src = '/api/placeholder/800/600';
+                    this.onerror = null;
+                };
+                
+                // Update thumbnail selection
+                const thumbnails = document.querySelectorAll('.thumbnail');
+                thumbnails.forEach((thumb, index) => {
+                    if (index === currentImageIndex) {
+                        thumb.style.border = '2px solid #A56F34';
+                    } else {
+                        thumb.style.border = 'none';
+                    }
+                });
+            }
+
+            // Add swipe functionality for mobile
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            mainImage.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+
+            mainImage.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+
+            function handleSwipe() {
+                if (touchEndX < touchStartX) {
+                    // Swipe left - next image
+                    nextBtn.click();
+                } else if (touchEndX > touchStartX) {
+                    // Swipe right - previous image
+                    prevBtn.click();
+                }
+            }
+        });
+        </script>
+    </div>
+</body>
+</html>

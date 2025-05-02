@@ -34,7 +34,7 @@
         <img src ="logo.png" style="width: auto; height: 100px; ">
 
         <button class="fa-solid fa-phone" id="menu-icon2" style="border: none; padding: 10px; background-color: #A56F34; color: #fff;" onclick="showPhoneNumberModal()"></button>
-        <div id="modal" style="width:250pxpx;display: none; position: center; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; border-radius: 8px; top: 30px; left: 0; margin-top:30%%; z-index:4000; ">
+        <div id="modal" style="width: 250px; display: none; position: fixed; background-color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); padding: 10px; border-radius: 8px; top: 50%; left: 50%; transform: translate(-50%, -50%); margin: 0; z-index: 4000;">
            <ul>
             <li>
             <a href="tel:+15863295217">
@@ -113,7 +113,7 @@
             </div>
         </div>
         <!-- button arrows  -->
-        <div class="arrows" style="width=5px; height=5px; ">
+        <div class="arrows" style="width: 5px; height: 5px; position: relative; margin: 20px;">
             <button id="prev" ><</button>
             <button id="next" >></button>
         </div>
@@ -258,6 +258,8 @@
             user-select: none;
         
         }
+
+
         
         @media (max-width: 991px){
         .row{
@@ -596,16 +598,7 @@
                 <div class="gallery-nav prev">&#10094;</div>
                 <div class="gallery-nav next">&#10095;</div>
             </div>
-            <div class="thumbnail-gallery">
-                <img class="thumbnail" src="image/thumbnail-1.jpg" alt="Thumbnail 1" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-2.jpg" alt="Thumbnail 2" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-3.jpg" alt="Thumbnail 3" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-4.jpg" alt="Thumbnail 4" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-5.jpg" alt="Thumbnail 5" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-6.jpg" alt="Thumbnail 6" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-7.jpg" alt="Thumbnail 7" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-8.jpg" alt="Thumbnail 8" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-            </div>
+            
         </div>
     </div>
 
@@ -739,26 +732,7 @@
             margin-bottom: 15px;
         }
 
-        .thumbnail-gallery {
-            display: flex;
-            overflow-x: auto;
-            gap: 10px;
-            margin-top: 20px;
-            padding-bottom: 10px;
-        }
 
-        .thumbnail {
-            width: 100px;
-            min-width: 100px;
-            height: 70px;
-            object-fit: cover;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-
-        .thumbnail:hover {
-            opacity: 0.8;
-        }
 
         .gallery-nav {
             position: absolute;
@@ -970,33 +944,7 @@
 
             // Function to update thumbnails
             function updateThumbnails() {
-                thumbnailGallery.innerHTML = '';
                 
-                projectsData[currentProject].gallery.forEach((img, index) => {
-                    const thumbnail = document.createElement('img');
-                    thumbnail.src = img;
-                    thumbnail.alt = `Thumbnail ${index + 1}`;
-                    thumbnail.classList.add('thumbnail');
-                    
-                    // Add fallback for image loading errors
-                    thumbnail.onerror = function() {
-                        this.src = '/api/placeholder/100/70';
-                        this.onerror = null;
-                    };
-                    
-                    // Add active class to current thumbnail
-                    if (index === currentImageIndex) {
-                        thumbnail.style.border = '2px solid #A56F34';
-                    }
-                    
-                    // Add click event to thumbnail
-                    thumbnail.addEventListener('click', () => {
-                        currentImageIndex = index;
-                        updateMainImage();
-                    });
-                    
-                    thumbnailGallery.appendChild(thumbnail);
-                });
             }
 
             // Function to update main image
