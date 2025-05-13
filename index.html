@@ -69,7 +69,7 @@
               
                     <h2>CUSTOM DESIGNS</h2>
                     <p>
-                        Your premier contractor for all your custom ideas
+                        We specialize in premium residential and commercial renovations—transforming spaces from demolition to turnkey with precision, style, and craftsmanship. Whether you’re upgrading a home, reimagining a workspace, or building from the ground up, we deliver tailored solutions that blend function with elevated design. With a commitment to quality and a passion for detail, we bring your vision to life—on time and above expectations.
                     </p>
                 </div>
             </div>
@@ -554,10 +554,7 @@
 
     <div class="projects-container">
         <!-- Project Cards -->
-        <div class="project-card" data-project="living-room">
-            <img src="img/projects/1/20-web-or-mls-Photo Feb 25 2025, 10 15 26 PM.jpg", alt="Modern living room" onerror="this.src='/api/placeholder/400/320'; this.onerror=null;">
-            <div class="project-name">Lombard In Duncanville</div>
-        </div>
+        
         <div class="project-card" data-project="kitchen">
             <img src="img/projects/3/001-529MeadowHeathLane-Dallas-TX-75232-FULL.jpg", alt="Modern kitchen" onerror="this.src='/api/placeholder/400/320'; this.onerror=null;">
             <div class="project-name">Meadow Heath Lane Tx</div>
@@ -574,10 +571,7 @@
             <img src="img/projects/5/1-web-or-mls-Photo Feb 05 2025, 2 11 19 AM_1.jpg", alt="Kitchen detail" onerror="this.src='/api/placeholder/400/320'; this.onerror=null;">
             <div class="project-name">Crossbend Tx</div>
         </div>
-        <div class="project-card" data-project="living-room-2">
-            <img src="img/projects/6/29-4Q4A6484.jpg", alt="Second living room" onerror="this.src='/api/placeholder/400/320'; this.onerror=null;">
-            <div class="project-name">Silver Creek In Duncanville Tx</div>
-        </div>
+        
     </div>
 
     <!-- Modal for project details -->
@@ -588,8 +582,8 @@
                 <img class="main-image" src="image/project-detail.jpg" alt="Project detail" onerror="this.src='/api/placeholder/800/600'; this.onerror=null;">
                 <div class="project-info">
                     <h2>PROYECT NAME</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.</p>
+                    <p>ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+                   
                 </div>
             </div>
             <div class="gallery-controls">
@@ -597,14 +591,7 @@
                 <div class="gallery-nav next">&#10095;</div>
             </div>
             <div class="thumbnail-gallery">
-                <img class="thumbnail" src="image/thumbnail-1.jpg" alt="Thumbnail 1" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-2.jpg" alt="Thumbnail 2" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-3.jpg" alt="Thumbnail 3" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-4.jpg" alt="Thumbnail 4" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-5.jpg" alt="Thumbnail 5" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-6.jpg" alt="Thumbnail 6" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-7.jpg" alt="Thumbnail 7" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
-                <img class="thumbnail" src="image/thumbnail-8.jpg" alt="Thumbnail 8" onerror="this.src='/api/placeholder/100/70'; this.onerror=null;">
+                
             </div>
         </div>
     </div>
@@ -620,7 +607,7 @@
             max-width: 1200px;
             margin: 30px auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             padding: 0 15px;
         }
@@ -740,7 +727,7 @@
         }
 
         .thumbnail-gallery {
-            display: flex;
+            display:block;
             overflow-x: auto;
             gap: 10px;
             margin-top: 20px;
@@ -748,9 +735,9 @@
         }
 
         .thumbnail {
-            width: 100px;
-            min-width: 100px;
-            height: 70px;
+            width: 0px;
+            min-width: 0px;
+            height: 0px;
             object-fit: cover;
             cursor: pointer;
             transition: opacity 0.3s;
@@ -805,19 +792,16 @@
                 description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
                 mainImage: "img/projects/1/20-web-or-mls-Photo Feb 25 2025, 10 15 26 PM.jpg",
                 gallery: [
-                    "img/projects/1/19-web-or-mls-Photo Feb 25 2025, 10 13 26 PM.jpg",
-                    "img/projects/1/20-web-or-mls-Photo Feb 25 2025, 10 15 26 PM.jpg",
-                    "img/projects/1/21-web-or-mls-Photo Feb 25 2025, 10 16 50 PM.jpg",
-                    "img/projects/1/4-web-or-mls-Photo Feb 25 2025, 9 53 25 PM.jpg",
-                    "img/projects/1/5-web-or-mls-Photo Feb 25 2025, 9 54 05 PM.jpg",
-                    "img/projects/1/6-web-or-mls-Photo Feb 25 2025, 9 54 52 PM.jpg",
-                    "img/projects/1/7-web-or-mls-Photo Feb 25 2025, 9 55 09 PM.jpg",
-                    "img/projects/1/8-web-or-mls-Photo Feb 25 2025, 9 56 28 PM.jpg",
+        
                 ]
+
+
+
+
             },
             "kitchen": {
                 name: "Bayonne In Mansfield",
-                description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                description: "Charming Country Modern Home with Resort-Style Pool in Mansfield, TX Welcome to Bayonne—a stunning country modern home located in the heart of Mansfield, Texas. This beautifully updated property combines rustic charm with contemporary upgrades, creating an ideal space for both relaxing and entertaining. Enjoy your own private oasis with an incredible backyard featuring a sparkling pool complete with a built-in slide—perfect for summer fun. Inside, the first floor has been completely transformed with luxurious vinyl plank flooring, adding warmth and durability throughout. The kitchen shines with reglazed cabinets, offering a fresh and modern feel while maintaining classic character.",
                 mainImage: "img/projects/3/001-529MeadowHeathLane-Dallas-TX-75232-FULL.jpg",
                 gallery: [
                     "img/projects/3/001-529MeadowHeathLane-Dallas-TX-75232-FULL.jpg",
@@ -833,7 +817,7 @@
             // Add data for other projects similarly
             "sliding-door": {
                 name: "Meadow Heath Lane",
-                description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                description: "Step into luxury with this fully renovated modern residence offering the perfect blend of style, comfort, and convenience. Located just 10 minutes from the heart of downtown Dallas, this beautifully updated home boasts striking curb appeal with freshly painted brick, brand-new shutters, and energy-efficient Low-E windows. Inside, you’ll find thoughtfully designed spaces illuminated by elegant LED light fixtures that highlight the home’s contemporary charm. The show-stopping master bathroom features floor-to-ceiling quartz walls, a luxurious standing tub, and modern finishes that create a spa-like retreat.",
                 mainImage: "img/projects/2/103-bayonne-dr-mansfield-tx-76063-High-Res-1.jpg",
                 gallery: [
                     "img/projects/2/103-bayonne-dr-mansfield-tx-76063-High-Res-1.jpg",
@@ -848,7 +832,7 @@
             },
             "bedroom": {
                 name: "Hedgerow",
-                description: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+                description: "Modern Masterpiece on Hedgerow – Just 12 Minutes from Downtown Dallas Experience the look and feel of new construction in this fully updated modern home on Hedgerow, perfectly situated just 12 minutes from the vibrant heart of downtown Dallas. With striking curb appeal, the exterior showcases all-new contemporary siding and energy-efficient Low-E windows for a sleek, sophisticated finish. Step inside to discover luxury at every turn, including beautifully designed bathrooms with premium finishes and a clean, modern aesthetic. The kitchen features high-end prefabricated natural oak cabinets accented with slim white oak detailing—offering both elegance and functionality.",
                 mainImage:  "img/projects/4/2-web-or-mls-Photo Jan 23 2025, 3 57 27 AM (1).jpg",
                 gallery: [
                     "img/projects/4/2-web-or-mls-Photo Jan 23 2025, 3 57 27 AM (1).jpg",
